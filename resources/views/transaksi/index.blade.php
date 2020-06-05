@@ -23,6 +23,8 @@
                   @endif
                   </div>
 </div>
+
+@if(Auth::user()->level == 'admin')
 <div class="row" style="margin-top: 20px;">
 <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
@@ -144,4 +146,88 @@
               </div>
             </div>
           </div>
+@else
+<div class="row" style="margin-top: 20px;">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+
+                <div class="card-body">
+                  <h4 class="card-title">Data Transaksi</h4>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-striped" id="table">
+                      <thead>
+                        <tr>
+                          <th>
+                            Kode
+                          </th>
+                          <th>
+                            Acara
+                          </th>
+                          <th>
+                            Donatur
+                          </th>
+                          <th>
+                            Tanggal Donasi
+                          </th>
+                          <th>
+                            Jumlah Donasi
+                          </th>
+                          <th>
+                            Status
+                          </th>
+                          <th>
+                            Ket
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                      @foreach($datas as $data)
+                        <tr>
+                          <td class="py-1">
+                          <a href="{{route('transaksi.show', $data->id)}}"> 
+                            {{$data->kode_transaksi}}
+                          </a>
+                          </td>
+                         
+                          <td>
+                            {{$data->acara->nama_acr}}
+                          </td>
+                         
+                          <td>
+                            {{$data->anggota->nama}}
+                          </td>
+              
+                          <td>
+                            {{date('d/m/y', strtotime($data->tgl_transaksi))}}
+                          </td>
+
+                          <td>
+                            {{$data->rupiah}}
+                          </td>
+              
+
+                          <td>
+                          @if($data->status == 'belum')
+                            <label class="badge badge-warning">belum</label>
+                          @else
+                            <label class="badge badge-success">lunas</label>
+                          @endif
+                          </td>
+
+                           <td>
+                            {{$data->ket}}
+                          </td>
+                        </tr>
+                      @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+               {{--  {!! $datas->links() !!} --}}
+                </div>
+              </div>
+            </div>
+          </div>
+          @endif
 @endsection

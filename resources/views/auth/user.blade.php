@@ -37,6 +37,9 @@
                             Name
                           </th>
                           <th>
+                            Status
+                          </th>
+                          <th>
                             Username
                           </th>
                           <th>
@@ -63,6 +66,9 @@
 
 
                             {{$data->name}}
+                          </td>
+                          <td>
+                            {{$data->level}}
                           </td>
                           <td>
                           <a href="{{route('user.show', $data->id)}}"> 

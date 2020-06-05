@@ -127,17 +127,27 @@
                                 @endif
                             </div>
                         </div>
+                        @if(Auth::user()->level == 'admin')
                          <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                             <label for="status" class="col-md-4 control-label">Status</label>
                             <div class="col-md-6">
                             <select class="form-control" name="status" required="">
-                                <option value=""></option>
                                 <option value="status">Belum</option>
                                 <option value="status">Lunas</option>
                                 
                             </select>
                             </div>
                         </div>
+                        @else
+                        <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                            <label for="status" class="col-md-4 control-label">Status</label>
+                            <div class="col-md-6">
+                            <select class="form-control" name="status" required="">
+                                <option value="status">Belum</option>          
+                            </select>
+                            </div>
+                        </div>
+                        @endif
                         <div class="form-group{{ $errors->has('ket') ? ' has-error' : '' }}">
                             <label for="ket" class="col-md-4 control-label">Keterangan</label>
                             <div class="col-md-6">
