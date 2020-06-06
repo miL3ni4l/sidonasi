@@ -48,7 +48,7 @@ var check = function() {
                 <div class="col-12">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Tambah user baru</h4>
+                      <h4 class="card-title">Tambah User Baru</h4>
                       
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>

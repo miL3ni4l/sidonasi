@@ -75,8 +75,7 @@ $(document).ready(function() {
                         <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
                             <label for="level" class="col-md-4 control-label">Jenis Kelamin</label>
                             <div class="col-md-6">
-                            <select class="form-control" name="jk" required="">
-                                <option value=""></option>
+                            <select class="form-control" name="jk" required="">                  
                                 <option value="L">Laki - Laki</option>
                                 <option value="P">Perempuan</option>
                             </select>
@@ -87,13 +86,12 @@ $(document).ready(function() {
                             <label for="agama" class="col-md-4 control-label">agama</label>
                             <div class="col-md-6">
                             <select class="form-control" name="agama" required="">
-                                <option value=""></option>
-                                <option value="Ks">Kristen</option>
-                                <option value="Kt">Katolik</option>
-                                <option value="Is">Islam</option>
-                                <option value="Hd">Hindu</option>
-                                <option value="Bd">Budha</option>
-                                <option value="Kg">Kong Hu Chu</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katoli">Katolik</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Kong Hu Chu">Kong Hu Chu</option>
                             </select>
                             </div>
                         </div>

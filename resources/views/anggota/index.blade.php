@@ -40,16 +40,7 @@
                             No Donatur
                           </th>
                           <th>
-                            Tempat Lahir
-                          </th>
-                          <th>
-                            Tanggal Lahir
-                          </th>
-                          <th>
                             Jenis Kelamin
-                          </th>
-                          <th>
-                            Agama
                           </th>
                           <th>
                             Alamat
@@ -84,36 +75,10 @@
                           </a>
                           </td>
 
-                          <td>
-                            {{$data->tempat_lahir}}
-                          </td>
-
-                          <td>
-                            {{$data->tgl_lahir}}
-                          </td>
-
                            <td>
                             {{$data->jk === "L" ? "Laki - Laki" : "Perempuan"}}
                           </td>
-
-                          <td>
-                          @if($data->agama == 'Ks')
-                            Kristen
-                          @elseif($data->agama == 'Kt')
-                            Katolik
-                          @elseif($data->agama == 'Is')
-                            Islam
-                          @elseif($data->agama == 'Hd')
-                            Hindu
-                          @elseif($data->agama == 'Bd')
-                            Budha
-                          @elseif($data->agama == 'Kg')
-                            Kong hu cu
-                          @else
-                            Kesehatan Masyarakat
-                          @endif
-                          </td>
-                         
+          
 
                           <td>
                             {{$data->alamat}}

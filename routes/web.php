@@ -26,7 +26,6 @@ Route::post('/user-register', 'UserController@store');
 Route::get('/user-edit/{id}', 'UserController@edit');
 
 Route::resource('user', 'UserController');
-
 Route::resource('anggota', 'AnggotaController');
 
 Route::resource('acara', 'AcaraController');

@@ -38,17 +38,7 @@ $(document).ready(function() {
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('npm') ? ' has-error' : '' }}">
-                            <label for="npm" class="col-md-4 control-label">NPM</label>
-                            <div class="col-md-6">
-                                <input id="npm" type="number" class="form-control" name="npm" value="{{ $data->npm }}" maxlength="8" readonly>
-                                @if ($errors->has('npm'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('npm') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                      
                         <div class="form-group{{ $errors->has('tempat_lahir') ? ' has-error' : '' }}">
                             <label for="tempat_lahir" class="col-md-4 control-label">Tempat Lahir</label>
                             <div class="col-md-6">
@@ -77,25 +67,31 @@ $(document).ready(function() {
                             <label for="level" class="col-md-4 control-label">Jenis Kelamin</label>
                             <div class="col-md-6">
                             <select class="form-control" name="jk" required="" disabled="">
-                                <option value=""></option>
                                 <option value="L" {{$data->jk === "L" ? "selected" : ""}}>Laki - Laki</option>
                                 <option value="P" {{$data->jk === "P" ? "selected" : ""}}>Perempuan</option>
                             </select>
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('prodi') ? ' has-error' : '' }}">
-                            <label for="prodi" class="col-md-4 control-label">Prodi</label>
+                       
+
+                         <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
+                            <label for="level" class="col-md-4 control-label">Agama</label>
                             <div class="col-md-6">
-                            <select class="form-control" name="prodi" required="" disabled="">
+                            <select class="form-control" name="agama" required="" disabled="">
                                 <option value=""></option>
-                                <option value="TI" {{$data->prodi === "TI" ? "selected" : ""}} >Teknik Informatika</option>
-                                <option value="SI" {{$data->prodi === "SI" ? "selected" : ""}} >Sistem Informasi</option>
-                                <option value="KM" {{$data->prodi === "KM" ? "selected" : ""}} >Kesehatan Masyarakat</option>
+                                <option value="L" {{$data->agama === "Ks" ? "selected" : ""}}>Kristen</option>
+                                <option value="P" {{$data->agama === "Kt" ? "selected" : ""}}>Katolik</option>
+                                <option value="P" {{$data->agama === "Is" ? "selected" : ""}}>Islam</option>
+                                <option value="P" {{$data->agama === "Hd" ? "selected" : ""}}>Hindu</option>
+                                <option value="P" {{$data->agama === "Bd" ? "selected" : ""}}>Budha</option>
+                                <option value="P" {{$data->agama === "Kg" ? "selected" : ""}}>Kong Hu Cu</option>
+
                             </select>
                             </div>
                         </div>
 
+                    
                         <div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }} " style="margin-bottom: 20px;">
                             <label for="user_id" class="col-md-4 control-label">User Login</label>
                             <div class="col-md-6">

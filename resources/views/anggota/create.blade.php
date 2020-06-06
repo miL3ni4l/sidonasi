@@ -21,7 +21,7 @@ $(document).ready(function() {
                 <div class="col-12">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Tambah Anggota baru</h4>
+                      <h4 class="card-title">Tambah Donatur Baru</h4>
                       
                         <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
                             <label for="nama" class="col-md-4 control-label">Nama</label>
@@ -87,12 +87,12 @@ $(document).ready(function() {
                             <div class="col-md-6">
                             <select class="form-control" name="agama" required="">
                                 <option value=""></option>
-                                <option value="Ks">Kristen</option>
-                                <option value="Kt">Katolik</option>
-                                <option value="Is">Islam</option>
-                                <option value="Hd">Hindu</option>
-                                <option value="Bd">Budha</option>
-                                <option value="Kg">Kong Hu Chu</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katolik">Katolik</option>
+                                <option value="Islam">Islam</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Budha">Budha</option>
+                                <option value="Kong Hu Chu">Kong Hu Chu</option>
                             </select>
                             </div>
                         </div>

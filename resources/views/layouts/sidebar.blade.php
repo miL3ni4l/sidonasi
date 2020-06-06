@@ -55,6 +55,7 @@
               <span class="menu-title">Donasi</span>
             </a>
           </li>
+          @if(Auth::user()->level == 'admin')
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-laporan" aria-expanded="false" aria-controls="ui-laporan">
               <i class="menu-icon mdi mdi-table"></i>
@@ -77,5 +78,5 @@
               </ul>
             </div>
           </li>
-         
+         @endif
         </ul>

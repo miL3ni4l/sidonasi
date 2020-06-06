@@ -58,9 +58,7 @@
                           <th>
                             Biaya
                           </th>
-                          <th>
-                            Ket
-                          </th>
+                        
                           <th>
                             Action
                           </th>
@@ -89,9 +87,7 @@
                           <td>
                             {{$data->jumlah_acara}}
                           </td>
-                          <td>
-                            {{$data->ket}}
-                          </td>
+                        
                           <td>
                           <div class="btn-group dropdown">
                           <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
