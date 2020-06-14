@@ -80,12 +80,12 @@ $(document).ready(function() {
                             <div class="col-md-6">
                             <select class="form-control" name="agama" required="" disabled="">
                                 <option value=""></option>
-                                <option value="L" {{$data->agama === "Ks" ? "selected" : ""}}>Kristen</option>
-                                <option value="P" {{$data->agama === "Kt" ? "selected" : ""}}>Katolik</option>
-                                <option value="P" {{$data->agama === "Is" ? "selected" : ""}}>Islam</option>
-                                <option value="P" {{$data->agama === "Hd" ? "selected" : ""}}>Hindu</option>
-                                <option value="P" {{$data->agama === "Bd" ? "selected" : ""}}>Budha</option>
-                                <option value="P" {{$data->agama === "Kg" ? "selected" : ""}}>Kong Hu Cu</option>
+                                <option value="L" {{$data->agama === "Kristen" ? "selected" : ""}}>Kristen</option>
+                                <option value="P" {{$data->agama === "Katolik" ? "selected" : ""}}>Katolik</option>
+                                <option value="P" {{$data->agama === "Islam" ? "selected" : ""}}>Islam</option>
+                                <option value="P" {{$data->agama === "Hindu" ? "selected" : ""}}>Hindu</option>
+                                <option value="P" {{$data->agama === "Budha" ? "selected" : ""}}>Budha</option>
+                                <option value="P" {{$data->agama === "Kong Hu Cu" ? "selected" : ""}}>Kong Hu Cu</option>
 
                             </select>
                             </div>

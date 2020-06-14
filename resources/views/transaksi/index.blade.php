@@ -164,9 +164,7 @@
                           <th>
                             Acara
                           </th>
-                          <th>
-                            Donatur
-                          </th>
+                         
                           <th>
                             Tanggal Donasi
                           </th>
@@ -195,9 +193,7 @@
                             {{$data->acara->nama_acr}}
                           </td>
                          
-                          <td>
-                            {{$data->anggota->nama}}
-                          </td>
+                        
               
                           <td>
                             {{date('d/m/y', strtotime($data->tgl_transaksi))}}
