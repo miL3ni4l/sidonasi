@@ -18,7 +18,7 @@
                 <div class="card-body">
                   <div class="clearfix">
                     <div class="float-left">
-                      <i class="mdi mdi-poll-box text-danger icon-lg"></i>
+                      <i class="mdi mdi-chart-line text-danger icon-lg"></i>
                     </div>
                     <div class="float-right">
                       <p class="mb-0 text-right">Donasi</p>
@@ -40,7 +40,7 @@
                 <div class="card-body">
                   <div class="clearfix">
                     <div class="float-left">
-                      <i class="mdi mdi-receipt text-warning icon-lg"></i>
+                      <i class="mdi mdi-currency-usd text-warning icon-lg"></i>
                     </div>
                     <div class="float-right">
                       <p class="mb-0 text-right">Lunas</p>
@@ -62,7 +62,7 @@
                 <div class="card-body">
                   <div class="clearfix">
                     <div class="float-left">
-                      <i class="mdi mdi-book text-success icon-lg" style="width: 40px;height: 40px;"></i>
+                      <i class="mdi mdi-microphone-variant text-success icon-lg" style="width: 40px;height: 40px;"></i>
                     </div>
                     <div class="float-right">
                       <p class="mb-0 text-right">Acara</p>
@@ -83,7 +83,7 @@
                 <div class="card-body">
                   <div class="clearfix">
                     <div class="float-left">
-                      <i class="mdi mdi-account-location text-info icon-lg"></i>
+                      <i class="mdi mdi-account-multiple text-info icon-lg"></i>
                     </div>
                     <div class="float-right">
                       <p class="mb-0 text-right">Donatur</p>

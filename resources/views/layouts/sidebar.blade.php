@@ -58,7 +58,7 @@
           @if(Auth::user()->level == 'admin')
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-laporan" aria-expanded="false" aria-controls="ui-laporan">
-              <i class="menu-icon mdi mdi-table"></i>
+              <i class="menu-icon mdi mdi-cloud-download"></i>
               <span class="menu-title">Laporan</span>
               <i class="menu-arrow"></i>
             </a>
