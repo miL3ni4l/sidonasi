@@ -24,7 +24,7 @@ $(document).ready(function() {
                       <h4 class="card-title">Tambah Donatur Baru</h4>
                       
                         <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
-                            <label for="nama" class="col-md-4 control-label">Nama</label>
+                            <label for="nama" class="col-md-4 control-label">Nama Donatur</label>
                             <div class="col-md-6">
                                 <input id="nama" type="text" class="form-control" name="nama" value="{{ old('nama') }}" required>
                                 @if ($errors->has('nama'))
@@ -83,7 +83,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="form-group{{ $errors->has('agama') ? ' has-error' : '' }}">
-                            <label for="agama" class="col-md-4 control-label">agama</label>
+                            <label for="agama" class="col-md-4 control-label">Agama</label>
                             <div class="col-md-6">
                             <select class="form-control" name="agama" required="">
                                 <option value=""></option>

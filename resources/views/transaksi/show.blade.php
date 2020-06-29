@@ -19,13 +19,7 @@
                             <div class="col-md-6">
                                 <input id="kode_transaksi" type="text" class="form-control" name="kode_transaksi" value="{{$data->kode_transaksi}}" required readonly="">
                             </div>
-                        </div>
-                         <div class="form-group{{ $errors->has('tgl_pinjam') ? ' has-error' : '' }}">
-                            <label for="tgl_pinjam" class="col-md-4 control-label">Tanggal Pinjam</label>
-                            <div class="col-md-3">
-                                <input id="tgl_pinjam" type="date" class="form-control" name="tgl_pinjam" value="{{ date('Y-m-d', strtotime($data->tgl_pinjam)) }}" readonly="">
-                            </div>
-                        </div>
+                      
                          <div class="form-group{{ $errors->has('tgl_lunas') ? ' has-error' : '' }}">
                             <label for="tgl_lunas" class="col-md-4 control-label">Tanggal lunas</label>
                             <div class="col-md-3">
@@ -34,14 +28,7 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <label for="anggota_id" class="col-md-4 control-label">acara</label>
-                            <div class="col-md-6">
-                                <input id="acara" type="text" class="form-control" readonly="" value="{{$data->acara->judul}}">
-
-                            </div>
-                        </div>
-
+                  
                         <div class="form-group">
                             <label for="anggota_id" class="col-md-4 control-label">Anggota</label>
                             <div class="col-md-6">
@@ -50,13 +37,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('ket') ? ' has-error' : '' }}">
-                            <label for="ket" class="col-md-4 control-label">Status</label>
+                        <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                            <label for="status" class="col-md-4 control-label">Status</label>
                             <div class="col-md-6">
-                                @if($data->status == 'pinjam')
-                                  <label class="badge badge-warning">Pinjam</label>
+                                @if($data->status == 'belum')
+                                  <label class="badge badge-warning">Belum</label>
                                 @else
-                                  <label class="badge badge-success">lunas</label>
+                                  <label class="badge badge-success">Lunas</label>
                                 @endif
                             </div>
                         </div>

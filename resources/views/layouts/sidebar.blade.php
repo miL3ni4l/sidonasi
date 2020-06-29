@@ -43,7 +43,7 @@
                   <a class="nav-link {{ setActive(['acara*']) }}" href="{{route('acara.index')}}">Data Acara</a>
                 </li>
                  <li class="nav-item">
-                  <a class="nav-link {{ setActive(['user*']) }}" href="{{route('user.index')}}">Data User</a>
+                  <a class="nav-link {{ setActive(['user*']) }}" href="{{route('user.index')}}">Data Pengguna</a>
                 </li>
               </ul>
             </div>
@@ -51,7 +51,7 @@
           @endif
           <li class="nav-item {{ setActive(['transaksi*']) }}">
             <a class="nav-link" href="{{route('transaksi.index')}}">
-              <i class="menu-icon mdi mdi-backup-restore"></i>
+              <i class="menu-icon mdi mdi-share"></i>
               <span class="menu-title">Donasi</span>
             </a>
           </li>

@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 */
 Auth::routes();
+// Route::get('/Register', function(){
+//     return view('auth.register');
+//     });
 
+// !@rogUGErj^iOMY^sA3d
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
 

@@ -28,7 +28,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
-                            <label for="nama" class="col-md-4 control-label">Nama</label>
+                            <label for="nama" class="col-md-4 control-label">Nama Donatur</label>
                             <div class="col-md-6">
                                 <input id="nama" type="text" class="form-control" name="nama" value="{{ $data->nama }}" readonly>
                                 @if ($errors->has('nama'))

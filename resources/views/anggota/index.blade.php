@@ -34,7 +34,7 @@
                       <thead>
                         <tr>
                           <th>
-                            Nama
+                            Nama Donatur
                           </th>
                           <th>
                             No Donatur

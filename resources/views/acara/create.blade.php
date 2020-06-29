@@ -58,7 +58,7 @@ $(document).ready(function() {
                         </div>
                         
                         <div class="form-group{{ $errors->has('tgl_acara') ? ' has-error' : '' }}">
-                            <label for="tgl_acara" class="col-md-4 control-label">Tanggal</label>
+                            <label for="tgl_acara" class="col-md-4 control-label">Tanggal Pelaksanaan</label>
                             <div class="col-md-6">
                                 <input id="tgl_acara" type="date" class="form-control" name="tgl_acara" value="{{ old('tgl_acara') }}" required>
                                 @if ($errors->has('tgl_acara'))
@@ -70,7 +70,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="form-group{{ $errors->has('lokasi') ? ' has-error' : '' }}">
-                            <label for="lokasi" class="col-md-4 control-label">lokasi</label>
+                            <label for="lokasi" class="col-md-4 control-label">Lokasi Acara</label>
                             <div class="col-md-6">
                                 <input id="lokasi" type="text" class="form-control" name="lokasi" value="{{ old('lokasi') }}" required>
                                 @if ($errors->has('lokasi'))
@@ -82,7 +82,7 @@ $(document).ready(function() {
                         </div>
                 
                         <div class="form-group{{ $errors->has('jumlah_acara') ? ' has-error' : '' }}">
-                            <label for="jumlah_acara" class="col-md-4 control-label">Jumlah acara</label>
+                            <label for="jumlah_acara" class="col-md-4 control-label">Anggaran</label>
                             <div class="col-md-6">
                                 <input id="jumlah_acara" type="number" maxlength="4" class="form-control" name="jumlah_acara" value="{{ old('jumlah_acara') }}" required>
                                 @if ($errors->has('jumlah_acara'))
@@ -94,7 +94,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="form-group{{ $errors->has('ket') ? ' has-error' : '' }}">
-                            <label for="ket" class="col-md-4 control-label">ket</label>
+                            <label for="ket" class="col-md-4 control-label">Keterangan</label>
                             <div class="col-md-12">
                                 <input id="ket" type="text" class="form-control" name="ket" value="{{ old('ket') }}" >
                                 @if ($errors->has('ket'))

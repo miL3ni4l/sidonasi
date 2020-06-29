@@ -51,7 +51,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="form-group{{ $errors->has('nama_acr') ? ' has-error' : '' }}">
-                            <label for="nama_acr" class="col-md-4 control-label">nama_acr</label>
+                            <label for="nama_acr" class="col-md-4 control-label">Acara</label>
                             <div class="col-md-6">
                                 <input id="nama_acr" type="text" class="form-control" name="nama_acr" value="{{ $data->nama_acr }}" readonly="">
                                 @if ($errors->has('nama_acr'))
@@ -62,7 +62,7 @@ $(document).ready(function() {
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('nid') ? ' has-error' : '' }}">
-                            <label for="tgl_acara" class="col-md-4 control-label">tgl_acara</label>
+                            <label for="tgl_acara" class="col-md-4 control-label">Tanggal Pelaksanaan</label>
                             <div class="col-md-6">
                                 <input id="tgl_acara" type="text" class="form-control" name="tgl_acara" value="{{ $data->tgl_acara }}" readonly>
                                 @if ($errors->has('tgl_acara'))
@@ -73,7 +73,7 @@ $(document).ready(function() {
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('lokasi') ? ' has-error' : '' }}">
-                            <label for="lokasi" class="col-md-4 control-label">lokasi</label>
+                            <label for="lokasi" class="col-md-4 control-label">Lokasi Acara</label>
                             <div class="col-md-6">
                                 <input id="lokasi" type="text" class="form-control" name="lokasi" value="{{ $data->lokasi }}" readonly>
                                 @if ($errors->has('lokasi'))
@@ -83,17 +83,7 @@ $(document).ready(function() {
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('jumlah_acr') ? ' has-error' : '' }}">
-                            <label for="jumlah_acr" class="col-md-4 control-label">Biaya</label>
-                            <div class="col-md-6">
-                                <input id="jumlah_acr" type="text" class="form-control" name="jumlah_acr" value="{{ $data->jumlah_acr }}" readonly>
-                                @if ($errors->has('jumlah_acr'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('jumlah_acr') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                       
                         
                        <div class="form-group{{ $errors->has('ket') ? ' has-error' : '' }}">
                             <label for="ket" class="col-md-4 control-label">Keterangan</label>
