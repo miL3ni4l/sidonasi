@@ -12,6 +12,7 @@
 
 @section('content')
 <div class="row">
+@if(Auth::user()->level == 'admin')
     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
             <div class="card card-statistics">
                 <div class="card-body">
@@ -32,7 +33,7 @@
                 </div>
               </div>
             </div>
-            @if(Auth::user()->level == 'admin')
+        
           
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
               <div class="card card-statistics">
@@ -106,8 +107,8 @@
 
                 <div class="card-body">
                   <h4 class="card-title">Data Transaksi </h4>
-                   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
+              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
+               <div class="card card-statistics">
                 <div class="card-body">
                   <div class="clearfix">
                     <div class="float-left">
@@ -247,6 +248,7 @@
 
                 <div class="card-body">
                   <h4 class="card-title">Data Transaksi</h4>
+                  
                   
                   <div class="table-responsive">
                     <table class="table table-striped" id="table">

@@ -67,7 +67,7 @@
                                 <input id="acara_judul" type="text" class="form-control" readonly="" required>
                                 <input id="acara_id" type="hidden" name="acara_id" value="{{ old('acara_id') }}" required readonly="">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-info btn-secondary" data-toggle="modal" data-target="#myModal"><b> Cari  Acara</b> <span class="fa fa-search"></span></button>
+                                    <button type="button" class="btn btn-info btn-secondary" data-toggle="modal" data-target="#myModal"><b>Cari acara</b> <span class="fa fa-search"></span></button>
                                 </span>
                                 </div>
                                 @if ($errors->has('acara_id'))
@@ -82,13 +82,13 @@
 
                         @if(Auth::user()->level == 'admin')
                         <div class="form-group{{ $errors->has('anggota_id') ? ' has-error' : '' }}">
-                            <label for="anggota_id" class="col-md-4 control-label">Donatur</label>
+                            <label for="anggota_id" class="col-md-4 control-label">Anggota</label>
                             <div class="col-md-6">
                                 <div class="input-group">
                                 <input id="anggota_nama" type="text" class="form-control" readonly="" required>
                                 <input id="anggota_id" type="hidden" name="anggota_id" value="{{ old('anggota_id') }}" required readonly="">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-warning btn-secondary" data-toggle="modal" data-target="#myModal2"><b>Cari Donatur</b> <span class="fa fa-search"></span></button>
+                                    <button type="button" class="btn btn-warning btn-secondary" data-toggle="modal" data-target="#myModal2"><b>Cari Anggota</b> <span class="fa fa-search"></span></button>
                                 </span>
                                 </div>
                                 @if ($errors->has('anggota_id'))
@@ -185,7 +185,7 @@
   <div class="modal-dialog modal-lg" role="document" >
     <div class="modal-content" style="background: #fff;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cari Acara</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cari acara</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -238,10 +238,10 @@
                             Nama
                           </th>
                           <th>
-                            NPM
+                            NID
                           </th>
                           <th>
-                            Prodi
+                            Asal
                           </th>
                           <th>
                             Jenis Kelamin

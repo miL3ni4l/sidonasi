@@ -56,7 +56,7 @@
                             Lokasi
                           </th>
                           <th>
-                            Biaya
+                            Anggaran
                           </th>
                         
                           <th>
