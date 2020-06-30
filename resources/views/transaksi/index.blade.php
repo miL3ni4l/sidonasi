@@ -37,7 +37,7 @@
                       <thead>
                         <tr>
                           <th>
-                            Kode
+                            Kode Donasi 
                           </th>
                           <th>
                             Acara

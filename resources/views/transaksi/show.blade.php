@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('kode_transaksi') ? ' has-error' : '' }}">
-                            <label for="kode_transaksi" class="col-md-4 control-label">Kode Transaksi</label>
+                            <label for="kode_transaksi" class="col-md-4 control-label">Kode Donasi</label>
                             <div class="col-md-6">
                                 <input id="kode_transaksi" type="text" class="form-control" name="kode_transaksi" value="{{$data->kode_transaksi}}" required readonly="">
                             </div>

@@ -37,7 +37,7 @@
                       <h4 class="card-title">Tambah Transaksi baru</h4>
                     
                         <div class="form-group{{ $errors->has('kode_transaksi') ? ' has-error' : '' }}">
-                            <label for="kode_transaksi" class="col-md-4 control-label">Kode Transaksi</label>
+                            <label for="kode_transaksi" class="col-md-4 control-label">Kode Donasi</label>
                             <div class="col-md-6">
                                 <input id="kode_transaksi" type="text" class="form-control" name="kode_transaksi" value="{{ $kode }}" required readonly="">
                                 @if ($errors->has('kode_transaksi'))
@@ -88,7 +88,7 @@
                                 <input id="anggota_nama" type="text" class="form-control" readonly="" required>
                                 <input id="anggota_id" type="hidden" name="anggota_id" value="{{ old('anggota_id') }}" required readonly="">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-warning btn-secondary" data-toggle="modal" data-target="#myModal2"><b>Cari Anggota</b> <span class="fa fa-search"></span></button>
+                                    <button type="button" class="btn btn-warning btn-secondary" data-toggle="modal" data-target="#myModal2"><b>Cari Donatur</b> <span class="fa fa-search"></span></button>
                                 </span>
                                 </div>
                                 @if ($errors->has('anggota_id'))
@@ -225,7 +225,7 @@
   <div class="modal-dialog modal-lg" role="document" >
     <div class="modal-content" style="background: #fff;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cari Anggota</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cari Donatur</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -238,10 +238,7 @@
                             Nama
                           </th>
                           <th>
-                            NID
-                          </th>
-                          <th>
-                            Asal
+                            No Donatur
                           </th>
                           <th>
                             Jenis Kelamin
@@ -261,18 +258,10 @@
                             {{$data->nama}}
                           </td>
                           <td>
-                            {{$data->npm}}
+                            {{$data->nid}}
                           </td>
 
-                          <td>
-                          @if($data->prodi == 'TI')
-                            Teknik Informatika
-                          @elseif($data->prodi == 'SI')
-                            Sistem Informasi
-                          @else
-                            Kesehatan Masyarakat
-                          @endif
-                          </td>
+                        
                           <td>
                             {{$data->jk === "L" ? "Laki - Laki" : "Perempuan"}}
                           </td>
