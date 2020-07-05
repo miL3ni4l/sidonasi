@@ -43,7 +43,7 @@ $(document).ready(function() {
                 <div class="col-12">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Tambah acara baru</h4>
+                      <h4 class="card-title">Tambah Acara Baru</h4>
                       
                         <div class="form-group{{ $errors->has('nama_acr') ? ' has-error' : '' }}">
                             <label for="nama_acr" class="col-md-4 control-label">Acara</label>
@@ -82,7 +82,7 @@ $(document).ready(function() {
                         </div>
                 
                         <div class="form-group{{ $errors->has('jumlah_acara') ? ' has-error' : '' }}">
-                            <label for="jumlah_acara" class="col-md-4 control-label">Anggaran</label>
+                            <label for="jumlah_acara" class="col-md-4 control-label">Rencana Anggaran</label>
                             <div class="col-md-6">
                                 <input id="jumlah_acara" type="number" maxlength="4" class="form-control" name="jumlah_acara" value="{{ old('jumlah_acara') }}" required>
                                 @if ($errors->has('jumlah_acara'))

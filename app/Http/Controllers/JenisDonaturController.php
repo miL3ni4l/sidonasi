@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Anggota;
 use App\JenisDonatur;
 use Carbon\Carbon;
 use Session;
@@ -13,7 +12,7 @@ use Auth;
 use DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class AnggotaController extends Controller
+class JenisDonaturController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,8 +32,8 @@ class AnggotaController extends Controller
             return redirect()->to('/');
         }
 
-        $datas = Anggota::get();
-        return view('anggota.index', compact('datas'));
+        $datas = JenisDonatur::get();
+        return view('jenisdonatur.index', compact('datas'));
     }
 
     /**
@@ -49,15 +48,7 @@ class AnggotaController extends Controller
             return redirect()->to('/');
         }
 
-        $users = User::WhereNotExists(function($query) {
-                        $query->select(DB::raw(1))
-                        ->from('anggota')
-                        ->whereRaw('anggota.user_id = users.id');
-                     })->get();
-        // return view('anggota.create', compact('users'));
-
-        $jenisdonaturs = JenisDonatur::get();
-        return view('anggota.create', compact('users', 'jenisdonaturs'));
+        return view('jenisdonatur.create');
     }
 
     /**
@@ -68,46 +59,14 @@ class AnggotaController extends Controller
      */
     public function store(Request $request)
     {
-        $count = Anggota::where('nid',$request->input('nid'))->count();
-
-        if($count>0){
-            Session::flash('message', 'Already exist!');
-            Session::flash('message_type', 'danger');
-            return redirect()->to('anggota');
-        }
-
-        $this->validate($request, [
-            'nama' => 'required|string|max:255',
-            'nid' => 'required|string|max:20|unique:anggota',
-            'jns_donatur_id' => 'required',
-        ]);
-        
-
-        Anggota::create($request->all());
+        JenisDonatur::create($request->all());
 
         alert()->success('Berhasil.','Data telah ditambahkan!');
-        return redirect()->route('anggota.index');
+        return redirect()->route('jenisdonatur.index');
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        if((Auth::user()->level == 'user') && (Auth::user()->id != $id)) {
-                Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
-                return redirect()->to('/');
-        }
-
-        $data = Anggota::findOrFail($id);
-
-        return view('anggota.show', compact('data'));
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -116,14 +75,14 @@ class AnggotaController extends Controller
      */
     public function edit($id)
     {   
-        if((Auth::user()->level == 'user') && (Auth::user()->id != $id)) {
+       
+        if(Auth::user()->level == 'user') {
                 Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
                 return redirect()->to('/');
         }
 
-        $data = Anggota::findOrFail($id);
-        $users = User::get();
-        return view('anggota.edit', compact('data', 'users'));
+        $data = JenisDonatur::findOrFail($id);
+        return view('jenisdonatur.edit', compact('data'));
     }
 
     /**
@@ -135,10 +94,10 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Anggota::find($id)->update($request->all());
+        JenisDonatur::find($id)->update($request->all());
 
         alert()->success('Berhasil.','Data telah diubah!');
-        return redirect()->to('anggota');
+        return redirect()->to('jenisdonatur');
     }
 
     /**
@@ -149,8 +108,8 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
-        Anggota::find($id)->delete();
+        JenisDonatur::find($id)->delete();
         alert()->success('Berhasil.','Data telah dihapus!');
-        return redirect()->route('anggota.index');
+        return redirect()->route('jenisdonatur.index');
     }
 }

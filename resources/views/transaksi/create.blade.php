@@ -48,7 +48,7 @@
                             </div>
                         </div>
                          <div class="form-group{{ $errors->has('tgl_transaksi') ? ' has-error' : '' }}">
-                            <label for="tgl_transaksi" class="col-md-4 control-label">Tanggal Domasi</label>
+                            <label for="tgl_transaksi" class="col-md-4 control-label">Tanggal Donasi</label>
                             <div class="col-md-3">
                                 <input id="tgl_transaksi" type="date" class="form-control" name="tgl_transaksi" value="{{ date('Y-m-d', strtotime(Carbon\Carbon::today()->toDateString())) }}" required @if(Auth::user()->level == 'user') readonly @endif>
                                 @if ($errors->has('tgl_transaksi'))
@@ -123,6 +123,30 @@
                                 @if ($errors->has('rupiah'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('rupiah') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('bank') ? ' has-error' : '' }}">
+                            <label for="bank" class="col-md-4 control-label">Bank</label>
+                            <div class="col-md-6">
+                                <input id="bank" type="text" class="form-control" name="bank" value="{{ old('bank') }}">
+                                @if ($errors->has('bank'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('bank') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('rek') ? ' has-error' : '' }}">
+                            <label for="rek" class="col-md-4 control-label">No Rekening</label>
+                            <div class="col-md-6">
+                                <input id="rek" type="text" class="form-control" name="rek" value="{{ old('rek') }}">
+                                @if ($errors->has('rek'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('rek') }}</strong>
                                     </span>
                                 @endif
                             </div>

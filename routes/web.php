@@ -31,6 +31,7 @@ Route::get('/user-edit/{id}', 'UserController@edit');
 
 Route::resource('user', 'UserController');
 Route::resource('anggota', 'AnggotaController');
+Route::resource('jenisdonatur', 'JenisDonaturController');
 
 Route::resource('acara', 'AcaraController');
 Route::get('/format_acara', 'AcaraController@format');

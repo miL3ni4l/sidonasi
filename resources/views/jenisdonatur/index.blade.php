@@ -12,6 +12,7 @@
 
 @section('content')
 <div class="row">
+
 &nbsp; &nbsp;
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Halaman Utama
@@ -32,7 +33,6 @@
   </ul>
 </div>
 
-
     <div class="col-lg-12">
                   @if (Session::has('message'))
                   <div class="alert alert-{{ Session::get('message_type') }}" id="waktu2" style="margin-top:10px;">{{ Session::get('message') }}</div>
@@ -51,23 +51,9 @@
                       <thead>
                         <tr>
                           <th>
-                            Nama Donatur
-                          </th>
-                          <th>
-                            No Donatur
-                          </th>
-                          <th>
                             Jenis Donatur
                           </th>
-                          <th>
-                            Jenis Kelamin
-                          </th>
-                          <th>
-                            Alamat
-                          </th>
-                          <th>
-                            No HP
-                          </th>
+                         
                           <th>
                             Action
                           </th>
@@ -76,39 +62,11 @@
                       <tbody>
                       @foreach($datas as $data)
                         <tr>
-                          <td class="py-1">
-                          @if($data->user->gambar)
-                            <img src="{{url('images/user', $data->user->gambar)}}" alt="image" style="margin-right: 10px;" />
-                          @else
-                            <img src="{{url('images/user/default.png')}}" alt="image" style="margin-right: 10px;" />
-                          @endif
-
-                            {{$data->nama}}
-                          </td>
-
-                          <td>
-                          <a href="{{route('anggota.show', $data->id)}}"> 
-                            {{$data->nid}}
-                          </a>
-                          </td>
-
-                          <td>
-                            {{$data->jns_donatur_id}}
-                          </td>
-
-                           <td>
-                            {{$data->jk === "L" ? "Laki - Laki" : "Perempuan"}}
-                          </td>
-          
-
-                          <td>
-                            {{$data->alamat}}
-                          </td>
-
-                          <td>
-                            {{$data->hp}}
-                          </td>
                           
+                          <td>
+                            {{$data->jns_donatur}}
+                          </td>
+
 
                           <td>
                            <div class="btn-group dropdown">
@@ -116,8 +74,8 @@
                             Action
                           </button>
                           <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 30px, 0px);">
-                            <a class="dropdown-item" href="{{route('anggota.edit', $data->id)}}"> Edit </a>
-                            <form action="{{ route('anggota.destroy', $data->id) }}" class="pull-left"  method="post">
+                            <a class="dropdown-item" href="{{route('jenisdonatur.edit', $data->id)}}"> Edit </a>
+                            <form action="{{ route('jenisdonatur.destroy', $data->id) }}" class="pull-left"  method="post">
                             {{ csrf_field() }}
                             {{ method_field('delete') }}
                             <button class="dropdown-item" onclick="return confirm('Anda yakin ingin menghapus data ini?')"> Delete

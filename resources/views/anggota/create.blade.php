@@ -1,14 +1,21 @@
 @section('js')
+ <script type="text/javascript">
+            $(document).on('click', '.pilih', function (e) {
+                document.getElementById("jenis_judul").value = $(this).attr('data-jenis_judul');
+                document.getElementById("jenis_id").value = $(this).attr('data-jenis_id');
+                $('#myModal').modal('hide');
+            });
 
-<script type="text/javascript">
+             $(function () {
+                $("#lookup, #lookup2").dataTable();
+            });
 
-$(document).ready(function() {
-    $(".users").select2();
-});
+        </script>
 
-</script>
 @stop
+@section('css')
 
+@stop
 @extends('layouts.app')
 
 @section('content')
@@ -23,6 +30,38 @@ $(document).ready(function() {
                     <div class="card-body">
                       <h4 class="card-title">Tambah Donatur Baru</h4>
                       
+                      <div class="form-group{{ $errors->has('nid') ? ' has-error' : '' }}">
+                            <label for="nid" class="col-md-4 control-label">No Donatur</label>
+                            <div class="col-md-6">
+                                <input id="nid" type="number" class="form-control" name="nid" value="{{ old('nid') }}" maxlength="8" required>
+                                @if ($errors->has('nid'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nid') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                       
+                        <div class="form-group{{ $errors->has('jns_donatur_id') ? ' has-error' : '' }}">
+                            <label for="jenis_id" class="col-md-4 control-label">Jenis Donatur</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                <input id="jenis_judul" type="text" class="form-control" readonly="" required>
+                                <input id="jenis_id" type="hidden" name="jenis_id" value="{{ old('jns_donatur_id') }}" required readonly="">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-info btn-secondary" data-toggle="modal" data-target="#myModal"><b>Cari Jenis Donatur</b> <span class="fa fa-search"></span></button>
+                                </span>
+                                </div>
+                                @if ($errors->has('jns_donatur_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('jns_donatur_id') }}</strong>
+                                    </span>
+                                @endif
+                                 
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('nama') ? ' has-error' : '' }}">
                             <label for="nama" class="col-md-4 control-label">Nama</label>
                             <div class="col-md-6">
@@ -35,17 +74,7 @@ $(document).ready(function() {
                             </div>
                         </div>
                         
-                        <div class="form-group{{ $errors->has('nid') ? ' has-error' : '' }}">
-                            <label for="nid" class="col-md-4 control-label">No Donatur</label>
-                            <div class="col-md-6">
-                                <input id="nid" type="number" class="form-control" name="nid" value="{{ old('nid') }}" maxlength="8" required>
-                                @if ($errors->has('nid'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nid') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group{{ $errors->has('tempat_lahir') ? ' has-error' : '' }}">
                             <label for="tempat_lahir" class="col-md-4 control-label">Tempat Lahir</label>
@@ -162,4 +191,36 @@ $(document).ready(function() {
 
 </div>
 </form>
+
+
+ 
+  <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg" role="document" >
+    <div class="modal-content" style="background: #fff;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cari Jenis Donatur</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+                        <table id="lookup" class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Jenis Donatur</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($jenisdonaturs as $data)
+                                <tr class="pilih" data-jenis_id="<?php echo $data->id; ?>" data-jenis_judul="<?php echo $data->jns_donatur; ?>" >
+                                    <td>{{$data->jns_donatur}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>  
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection

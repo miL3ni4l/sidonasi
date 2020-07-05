@@ -17,6 +17,7 @@ class CreateAnggotasTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->Integer('jns_donatur_id')->references('id')->on('jenisdonaturs')->onDelete('restrict');
             $table->integer('nid');
             $table->string('nama');
             $table->string('tempat_lahir')->nullable();

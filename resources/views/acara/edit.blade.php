@@ -83,7 +83,7 @@ $(document).ready(function() {
                         </div>
 
                         <div class="form-group{{ $errors->has('jumlah_acara') ? ' has-error' : '' }}">
-                            <label for="jumlah_acara" class="col-md-4 control-label">Anggaran</label>
+                            <label for="jumlah_acara" class="col-md-4 control-label">Rencana Anggaran</label>
                             <div class="col-md-6">
                                 <input id="jumlah_acara" type="number" maxlength="4" class="form-control" name="jumlah_acara" value="{{ old('jumlah_acara') }}" required>
                                 @if ($errors->has('jumlah_acara'))

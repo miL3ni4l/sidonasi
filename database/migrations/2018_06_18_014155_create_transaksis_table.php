@@ -21,6 +21,8 @@ class CreateTransaksisTable extends Migration
             $table->integer('acara_id')->unsigned();
             $table->foreign('acara_id')->references('id')->on('acara')->onDelete('cascade');
             $table->date('tgl_transaksi');
+            $table->string('bank');
+            $table->string('rek');
             $table->string('rupiah');
             $table->enum('status', ['belum', 'lunas']);
             $table->text('ket')->nullable();
