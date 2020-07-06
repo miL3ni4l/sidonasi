@@ -57,12 +57,6 @@
                             No Donatur
                           </th>
                           <th>
-                            Jenis Donatur
-                          </th>
-                          <th>
-                            Jenis Kelamin
-                          </th>
-                          <th>
                             Alamat
                           </th>
                           <th>
@@ -91,16 +85,7 @@
                             {{$data->nid}}
                           </a>
                           </td>
-
-                          <td>
-                            {{$data->jns_donatur_id}}
-                          </td>
-
-                           <td>
-                            {{$data->jk === "L" ? "Laki - Laki" : "Perempuan"}}
-                          </td>
-          
-
+            
                           <td>
                             {{$data->alamat}}
                           </td>

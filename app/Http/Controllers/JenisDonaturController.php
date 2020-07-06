@@ -26,7 +26,7 @@ class JenisDonaturController extends Controller
     }
 
     public function index()
-    {
+    {   
         if(Auth::user()->level == 'user') {
             Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
             return redirect()->to('/');
@@ -83,6 +83,20 @@ class JenisDonaturController extends Controller
 
         $data = JenisDonatur::findOrFail($id);
         return view('jenisdonatur.edit', compact('data'));
+    }
+
+     public function show($id)
+    {   $data = JenisDonatur::findOrFail($id);
+    
+        if((Auth::user()->level == 'user') && (Auth::user()->id != $id)) {
+                Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
+                return redirect()->to('/');
+        }
+
+        
+
+        return view('jenisdonatur.show', compact('data'));
+        
     }
 
     /**

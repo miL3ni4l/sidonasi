@@ -28,9 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
+        
         $transaksi = Transaksi::get();
         $anggota   = Anggota::get();
         $acara      = Acara::get();
+        
         if(Auth::user()->level == 'user')
         {
             $datas = Transaksi::where('status', 'belum')

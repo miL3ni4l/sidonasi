@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Anggota extends Model
 {
 	protected $table = 'anggota';
-    protected $fillable = ['user_id', 'jns_donatur_id', 'nid', 'nama', 'tempat_lahir', 'tgl_lahir', 'jk', 'agama', 'alamat', 'hp', 'email'];
+    protected $fillable = ['user_id', 'jns_donatur_id', 'nid', 'nama',  'alamat', 'hp', 'email'];
 
+    public function jenisdonatur()
+    {
+    	return $this->hasOne(JenisDonatur::class);
+    }
     /**
      * Method One To One 
      */

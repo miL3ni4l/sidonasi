@@ -75,57 +75,6 @@
                         </div>
                         
                         
-
-                        <div class="form-group{{ $errors->has('tempat_lahir') ? ' has-error' : '' }}">
-                            <label for="tempat_lahir" class="col-md-4 control-label">Tempat Lahir</label>
-                            <div class="col-md-6">
-                                <input id="tempat_lahir" type="text" class="form-control" name="tempat_lahir" value="{{ old('tempat_lahir') }}" required>
-                                @if ($errors->has('tempat_lahir'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tempat_lahir') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('tgl_lahir') ? ' has-error' : '' }}">
-                            <label for="tgl_lahir" class="col-md-4 control-label">Tanggal Lahir</label>
-                            <div class="col-md-6">
-                                <input id="tgl_lahir" type="date" class="form-control" name="tgl_lahir" value="{{ old('tgl_lahir') }}" required>
-                                @if ($errors->has('tgl_lahir'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tgl_lahir') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-                            <label for="level" class="col-md-4 control-label">Jenis Kelamin</label>
-                            <div class="col-md-6">
-                            <select class="form-control" name="jk" required="">
-                                <option value=""></option>
-                                <option value="L">Laki - Laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('agama') ? ' has-error' : '' }}">
-                            <label for="agama" class="col-md-4 control-label">Agama</label>
-                            <div class="col-md-6">
-                            <select class="form-control" name="agama" required="">
-                                <option value=""></option>
-                                <option value="Kristen">Kristen</option>
-                                <option value="Katolik">Katolik</option>
-                                <option value="Islam">Islam</option>
-                                <option value="Hindu">Hindu</option>
-                                <option value="Budha">Budha</option>
-                                <option value="Kong Hu Chu">Kong Hu Chu</option>
-                            </select>
-                            </div>
-                        </div>
-                        
                         <div class="form-group{{ $errors->has('alamat') ? ' has-error' : '' }}">
                             <label for="alamat" class="col-md-4 control-label">Alamat</label>
                             <div class="col-md-6">

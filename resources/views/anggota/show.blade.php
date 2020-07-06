@@ -38,38 +38,16 @@ $(document).ready(function() {
                                 @endif
                             </div>
                         </div>
-                      
-                        <div class="form-group{{ $errors->has('tempat_lahir') ? ' has-error' : '' }}">
-                            <label for="tempat_lahir" class="col-md-4 control-label">Tempat Lahir</label>
+
+                        <div class="form-group{{ $errors->has('jns_donatur') ? ' has-error' : '' }}">
+                            <label for="jns_donatur_id" class="col-md-4 control-label">Jenis Donatur</label>
                             <div class="col-md-6">
-                                <input id="tempat_lahir" type="text" class="form-control" name="tempat_lahir" value="{{ $data->tempat_lahir }}" readonly>
-                                @if ($errors->has('tempat_lahir'))
+                                <input id="jns_donatur_id" type="text" class="form-control" name="jns_donatur_id" value="{{ $data->jns_donatur_id }}" readonly>
+                                @if ($errors->has('jns_donatur_id'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('tempat_lahir') }}</strong>
+                                        <strong>{{ $errors->first('jns_donatur_id') }}</strong>
                                     </span>
                                 @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('tgl_lahir') ? ' has-error' : '' }}">
-                            <label for="tgl_lahir" class="col-md-4 control-label">Tanggal Lahir</label>
-                            <div class="col-md-6">
-                                <input id="tgl_lahir" type="text" class="form-control" name="tgl_lahir" value="{{ date('d F Y', strtotime($data->tgl_lahir)) }}" readonly>
-                                @if ($errors->has('tgl_lahir'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('tgl_lahir') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-                            <label for="level" class="col-md-4 control-label">Jenis Kelamin</label>
-                            <div class="col-md-6">
-                            <select class="form-control" name="jk" required="" disabled="">
-                                <option value="L" {{$data->jk === "L" ? "selected" : ""}}>Laki - Laki</option>
-                                <option value="P" {{$data->jk === "P" ? "selected" : ""}}>Perempuan</option>
-                            </select>
                             </div>
                         </div>
 

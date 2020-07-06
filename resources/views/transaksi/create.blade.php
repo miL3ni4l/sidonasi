@@ -82,7 +82,7 @@
 
                         @if(Auth::user()->level == 'admin')
                         <div class="form-group{{ $errors->has('anggota_id') ? ' has-error' : '' }}">
-                            <label for="anggota_id" class="col-md-4 control-label">Anggota</label>
+                            <label for="anggota_id" class="col-md-4 control-label">Donatur</label>
                             <div class="col-md-6">
                                 <div class="input-group">
                                 <input id="anggota_nama" type="text" class="form-control" readonly="" required>
@@ -101,7 +101,7 @@
                         </div>
                         @else
                         <div class="form-group{{ $errors->has('anggota_id') ? ' has-error' : '' }}">
-                            <label for="anggota_id" class="col-md-4 control-label">Anggota</label>
+                            <label for="anggota_id" class="col-md-4 control-label">Donatur</label>
                             <div class="col-md-6">
                                 <input id="anggota_nama" type="text" class="form-control" readonly="" value="{{Auth::user()->anggota->nama}}" required>
                                 <input id="anggota_id" type="hidden" name="anggota_id" value="{{ Auth::user()->anggota->id }}" required readonly="">

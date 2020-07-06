@@ -102,15 +102,17 @@ class AnggotaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    {   $data = Anggota::findOrFail($id);
+    
         if((Auth::user()->level == 'user') && (Auth::user()->id != $id)) {
                 Alert::info('Oopss..', 'Anda dilarang masuk ke area ini.');
                 return redirect()->to('/');
         }
 
-        $data = Anggota::findOrFail($id);
+        
 
         return view('anggota.show', compact('data'));
+        
     }
 
     /**

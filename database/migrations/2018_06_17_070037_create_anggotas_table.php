@@ -20,10 +20,10 @@ class CreateAnggotasTable extends Migration
             $table->Integer('jns_donatur_id')->references('id')->on('jenisdonaturs')->onDelete('restrict');
             $table->integer('nid');
             $table->string('nama');
-            $table->string('tempat_lahir')->nullable();
-            $table->date('tgl_lahir')->nullable();
-            $table->enum('jk', ['L', 'P']);
-            $table->string('agama')->nullable();
+            // $table->string('tempat_lahir')->nullable();
+            // $table->date('tgl_lahir')->nullable();
+            // $table->enum('jk', ['L', 'P']);
+            // $table->string('agama')->nullable();
             $table->string('alamat')->nullable();
             $table->string('hp')->nullable();
             $table->string('email')->nullable();
