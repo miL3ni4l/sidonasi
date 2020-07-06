@@ -192,7 +192,7 @@ public function transaksiExcel(Request $request)
                         $data->acara->nama_acr,
                         $data->anggota->nama,
                         date('d/m/y', strtotime($data['tgl_transaksi'])),
-                        $data['rupiah'],
+                        $data['total_donasi'],
                         $data['status'],
                         $data['ket']
                     );

@@ -23,7 +23,8 @@ class CreateTransaksisTable extends Migration
             $table->date('tgl_transaksi');
             $table->string('bank');
             $table->string('rek');
-            $table->string('rupiah');
+            $table->string('jml_donasi');
+            $table->string('total_donasi');
             $table->enum('status', ['belum', 'lunas']);
             $table->text('ket')->nullable();
             $table->timestamps();        

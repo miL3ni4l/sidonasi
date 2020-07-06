@@ -15,8 +15,20 @@
 <div class="row">
 
   <div class="col-lg-2">
-    <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-rounded btn-fw"><i class="fa fa-plus"></i> Tambah Transaksi</a>
+    <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-rounded btn-fw"><i class="fa fa-plus"></i> Tambah Donasi</a>
   </div>
+                        <div class="btn-group dropdown">
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <b><i class="fa fa-download"></i> Export PDF</b>
+                          </button>
+                          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 30px, 0px);">
+                            <a class="dropdown-item" href="{{url('laporan/trs/pdf')}}"> Semua  </a>
+                            <a class="dropdown-item" href="{{url('laporan/trs/pdf?status=belum')}}"> Belum Lunas </a>
+                            <a class="dropdown-item" href="{{url('laporan/trs/pdf?status=lunas')}}"> Lunas </a>
+                          </div>
+                        </div>
+                     
+
     <div class="col-lg-12">
                   @if (Session::has('message'))
                   <div class="alert alert-{{ Session::get('message_type') }}" id="waktu2" style="margin-top:10px;">{{ Session::get('message') }}</div>
@@ -30,7 +42,7 @@
               <div class="card">
 
                 <div class="card-body">
-                  <h4 class="card-title">Data Transaksi</h4>
+                  <h4 class="card-title">Data Donasi</h4>
                   
                   <div class="table-responsive">
                     <table class="table table-striped" id="table">
@@ -47,6 +59,9 @@
                           </th>
                           <th>
                             Tanggal Donasi
+                          </th>
+                          <th>
+                            Jenis Donasi
                           </th>
                           <th>
                             Jumlah Donasi
@@ -83,9 +98,12 @@
                           <td>
                             {{date('d/m/y', strtotime($data->tgl_transaksi))}}
                           </td>
-
                           <td>
-                            {{$data->rupiah}}
+                            {{$data->jml_donasi}}
+                          </td>
+                          
+                          <td>
+                            {{$data->total_donasi}}
                           </td>
               
 
@@ -200,7 +218,7 @@
                           </td>
 
                           <td>
-                            {{$data->rupiah}}
+                            {{$data->total_donasi}}
                           </td>
               
 

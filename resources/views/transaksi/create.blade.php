@@ -34,7 +34,7 @@
                 <div class="col-12">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Tambah Transaksi baru</h4>
+                      <h4 class="card-title">Tambah Donasi baru</h4>
                     
                         <div class="form-group{{ $errors->has('kode_transaksi') ? ' has-error' : '' }}">
                             <label for="kode_transaksi" class="col-md-4 control-label">Kode Donasi</label>
@@ -67,7 +67,7 @@
                                 <input id="acara_judul" type="text" class="form-control" readonly="" required>
                                 <input id="acara_id" type="hidden" name="acara_id" value="{{ old('acara_id') }}" required readonly="">
                                 <span class="input-group-btn">
-                                    <button type="button" class="btn btn-info btn-secondary" data-toggle="modal" data-target="#myModal"><b>Cari acara</b> <span class="fa fa-search"></span></button>
+                                    <button type="button" class="btn btn-info btn-secondary" data-toggle="modal" data-target="#myModal"><b>Cari Acara</b> <span class="fa fa-search"></span></button>
                                 </span>
                                 </div>
                                 @if ($errors->has('acara_id'))
@@ -116,18 +116,35 @@
                         </div>
                         @endif
 
-                         <div class="form-group{{ $errors->has('rupiah') ? ' has-error' : '' }}">
-                            <label for="rupiah" class="col-md-4 control-label">Donasi</label>
+                        
+                        
+
+                        <div class="form-group{{ $errors->has('jml_donasi') ? ' has-error' : '' }}">
+                            <label for="jml_donasi" class="col-md-4 control-label">Jenis Donasi</label>
                             <div class="col-md-6">
-                                <input id="rupiah" type="text" class="form-control" name="rupiah" value="{{ old('rupiah') }}">
-                                @if ($errors->has('rupiah'))
+                            <select class="form-control" name="jml_donasi" required="">
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value="Uang">Uang</option>
+                                <option value="Mobil">Mobil</option>
+                                <option value="Motor">Motor</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group{{ $errors->has('total_donasi') ? ' has-error' : '' }}">
+                            <label for="total_donasi" class="col-md-4 control-label">Total Donasi</label>
+                            <div class="col-md-6">
+                                <input id="total_donasi" type="number" class="form-control" name="total_donasi" value="{{ old('total_donasi') }}">
+                                @if ($errors->has('total_donasi'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('rupiah') }}</strong>
+                                        <strong>{{ $errors->first('total_donasi') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
-
+   
                         <div class="form-group{{ $errors->has('bank') ? ' has-error' : '' }}">
                             <label for="bank" class="col-md-4 control-label">Bank</label>
                             <div class="col-md-6">
@@ -209,7 +226,7 @@
   <div class="modal-dialog modal-lg" role="document" >
     <div class="modal-content" style="background: #fff;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cari acara</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cari Acara</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

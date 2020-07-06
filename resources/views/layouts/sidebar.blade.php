@@ -51,32 +51,8 @@
           @endif
           <li class="nav-item {{ setActive(['transaksi*']) }}">
             <a class="nav-link" href="{{route('transaksi.index')}}">
-              <i class="menu-icon mdi mdi-share"></i>
+              <i class="menu-icon mdi mdi-cloud-download"></i>
               <span class="menu-title">Donasi</span>
             </a>
           </li>
-          @if(Auth::user()->level == 'admin')
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-laporan" aria-expanded="false" aria-controls="ui-laporan">
-              <i class="menu-icon mdi mdi-cloud-download"></i>
-              <span class="menu-title">Laporan</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-laporan">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="{{url('laporan/trs')}}">Laporan Donasi</a>
-                </li>
-                <!--
-                <li class="nav-item">
-                  <a class="nav-link" href="">Laporan Anggota</a>
-                </li>
-                -->
-                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('laporan/acara')}}">Laporan Acara</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-         @endif
         </ul>

@@ -29,19 +29,22 @@
           </form>
 
         </div>
+
     <div class="col-lg-12">
                   @if (Session::has('message'))
                   <div class="alert alert-{{ Session::get('message_type') }}" id="waktu2" style="margin-top:10px;">{{ Session::get('message') }}</div>
                   @endif
-                  </div>
+    </div>
 </div>
+
+
 <div class="row" style="margin-top: 20px;">
 <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
 
                 <div class="card-body">
                   <h4 class="card-title pull-left">Data acara</h4>
-                  <a href="{{url('format_acara')}}" class="btn btn-xs btn-info pull-right">Download</a>
+              
                   <div class="table-responsive">
                     <table class="table table-striped" id="table">
                       <thead>
@@ -65,7 +68,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                      @foreach($datas as $data)
+                      @foreach($datas as $index => $data)
                         <tr>
                           <td class="py-1">
                           @if($data->cover)

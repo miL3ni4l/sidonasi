@@ -7,7 +7,7 @@ use App\Transaksi;
 use App\Anggota;
 use App\Acara;
 use Auth;
-
+use DB;
 
 class HomeController extends Controller
 {
@@ -29,11 +29,30 @@ class HomeController extends Controller
     public function index()
     {
         
+        // $transaksi = Transaksi::get();
+        // $anggota   = Anggota::get();
+        // $acara      = Acara::get();
         
-        $transaksi = Transaksi::get();
-        $anggota   = Anggota::get();
-        $acara      = Acara::get();
+        // if(Auth::user()->level == 'user')
+        // {
+        //     $datas = Transaksi::where('status', 'belum')
+        //                         ->where('anggota_id', Auth::user()->anggota->id)
+        //                         ->get();
+        // } else {
+        //     $datas = Transaksi::where('status', 'belum')->get();
+        // }
+        // return view('home', compact('transaksi', 'anggota', 'acara', 'datas'));
         
+        
+        // Tambahan DASHBOARD
+        $grafik = DB::table('transaksi')
+                  ->select(DB::raw("DATE_FORMAT(tgl_transaksi,'%M') as period, SUM(total_donasi) as SiteA"))
+                  ->orderBy('tgl_transaksi','ASC')->groupBy('period')->get();
+   
+        $anggotas = Anggota::count();
+        $acaras = Acara::count();
+        $transaksis = Transaksi::sum('total_donasi');
+
         if(Auth::user()->level == 'user')
         {
             $datas = Transaksi::where('status', 'belum')
@@ -42,6 +61,6 @@ class HomeController extends Controller
         } else {
             $datas = Transaksi::where('status', 'belum')->get();
         }
-        return view('home', compact('transaksi', 'anggota', 'acara', 'datas'));
+        return view('layouts.dashboard',array('anggotas' => $anggotas, 'acaras' => $acaras, 'transaksis' => $transaksis,'grafik' => $grafik, 'datas' => $datas));
     }
 }

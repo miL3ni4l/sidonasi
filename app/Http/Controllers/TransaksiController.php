@@ -84,9 +84,10 @@ class TransaksiController extends Controller
         $this->validate($request, [
             'kode_transaksi' => 'required|string|max:255',
             'tgl_transaksi' => 'required',
+            'jml_donasi' => 'required',
             'bank' => 'required',
             'rek' => 'required',
-            'rupiah' => 'required',
+            'total_donasi' => 'required',
             'ket' => 'required',
             'acara_id' => 'required',
             'anggota_id' => 'required',
@@ -96,9 +97,10 @@ class TransaksiController extends Controller
         $transaksi = Transaksi::create([
                 'kode_transaksi' => $request->get('kode_transaksi'),
                 'tgl_transaksi' => $request->get('tgl_transaksi'),
+                'jml_donasi' => $request->get('jml_donasi'),
                 'bank' => $request->get('bank'),
                 'rek' => $request->get('rek'),
-                'rupiah' => $request->get('rupiah'),
+                'total_donasi' => $request->get('total_donasi'),
                 'ket' => $request->get('ket'),
                 'acara_id' => $request->get('acara_id'),
                 'anggota_id' => $request->get('anggota_id'),

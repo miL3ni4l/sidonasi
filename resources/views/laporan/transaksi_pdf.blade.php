@@ -101,6 +101,9 @@
                             Tanggal Donasi
                           </th>
                           <th>
+                            Jenis Donasi
+                          </th>
+                          <th>
                             Jumlah Donasi
                           </th>
                           <th>
@@ -132,8 +135,13 @@
                             {{date('d/m/y', strtotime($data->tgl_transaksi))}}
                           </td>
 
+
                           <td>
-                            {{$data->rupiah}}
+                            {{$data->jml_donasi}}
+                          </td>
+
+                          <td>
+                            {{$data->total_donasi}}
                           </td>
               
 
