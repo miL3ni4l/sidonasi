@@ -73,25 +73,6 @@ $(document).ready(function() {
                             </div>
                         </div>
 
-                       
-
-                         <div class="form-group{{ $errors->has('level') ? ' has-error' : '' }}">
-                            <label for="level" class="col-md-4 control-label">Agama</label>
-                            <div class="col-md-6">
-                            <select class="form-control" name="agama" required="" disabled="">
-                                <option value=""></option>
-                                <option value="L" {{$data->agama === "Kristen" ? "selected" : ""}}>Kristen</option>
-                                <option value="P" {{$data->agama === "Katolik" ? "selected" : ""}}>Katolik</option>
-                                <option value="P" {{$data->agama === "Islam" ? "selected" : ""}}>Islam</option>
-                                <option value="P" {{$data->agama === "Hindu" ? "selected" : ""}}>Hindu</option>
-                                <option value="P" {{$data->agama === "Budha" ? "selected" : ""}}>Budha</option>
-                                <option value="P" {{$data->agama === "Kong Hu Cu" ? "selected" : ""}}>Kong Hu Cu</option>
-
-                            </select>
-                            </div>
-                        </div>
-
-                    
                         <div class="form-group{{ $errors->has('user_id') ? ' has-error' : '' }} " style="margin-bottom: 20px;">
                             <label for="user_id" class="col-md-4 control-label">User Login</label>
                             <div class="col-md-6">

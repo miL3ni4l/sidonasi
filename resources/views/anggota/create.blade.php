@@ -2,7 +2,7 @@
  <script type="text/javascript">
             $(document).on('click', '.pilih', function (e) {
                 document.getElementById("jenis_judul").value = $(this).attr('data-jenis_judul');
-                document.getElementById("jenis_id").value = $(this).attr('data-jenis_id');
+                document.getElementById("jns_donatur_id").value = $(this).attr('data-jns_donatur_id');
                 $('#myModal').modal('hide');
             });
 
@@ -44,11 +44,11 @@
 
                        
                         <div class="form-group{{ $errors->has('jns_donatur_id') ? ' has-error' : '' }}">
-                            <label for="jenis_id" class="col-md-4 control-label">Jenis Donatur</label>
+                            <label for="jns_donatur_id" class="col-md-4 control-label">Jenis Donatur</label>
                             <div class="col-md-6">
                                 <div class="input-group">
                                 <input id="jenis_judul" type="text" class="form-control" readonly="" required>
-                                <input id="jenis_id" type="hidden" name="jenis_id" value="{{ old('jns_donatur_id') }}" required readonly="">
+                                <input id="jns_donatur_id" type="hidden" name="jns_donatur_id" value="{{ old('jns_donatur_id') }}" required readonly="">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-info btn-secondary" data-toggle="modal" data-target="#myModal"><b>Cari Jenis Donatur</b> <span class="fa fa-search"></span></button>
                                 </span>
@@ -213,7 +213,7 @@
                             </thead>
                             <tbody>
                                 @foreach($jenisdonaturs as $data)
-                                <tr class="pilih" data-jenis_id="<?php echo $data->id; ?>" data-jenis_judul="<?php echo $data->jns_donatur; ?>" >
+                                <tr class="pilih" data-jns_donatur_id="<?php echo $data->id; ?>" data-jenis_judul="<?php echo $data->jns_donatur; ?>" >
                                     <td>{{$data->jns_donatur}}</td>
                                 </tr>
                                 @endforeach

@@ -82,6 +82,11 @@ class AnggotaController extends Controller
             'jns_donatur_id' => 'required',
         ]);
         
+        // $anggota = Anggota::create([
+        //         'nama' => $request->get('kode_transaksi'),
+        //         'nid' => $request->get('nid'),
+        //         'jns_donatur_id' => $request->get('jns_donatur_id'),
+        //         ]);
 
         Anggota::create($request->all());
 
